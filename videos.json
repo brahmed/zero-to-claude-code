@@ -1,0 +1,264 @@
+{
+  "steps": [
+    {
+      "id": 1,
+      "title": "LLM Foundations",
+      "subtitle": "How LLMs and their tools work",
+      "requires": []
+    },
+    {
+      "id": 2,
+      "title": "Claude Code basics",
+      "subtitle": "Your first hands-on steps",
+      "requires": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Agents & skills",
+      "subtitle": "The core ideas: agents, harnesses and skills",
+      "requires": [
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Real workflows",
+      "subtitle": "Building real software with it",
+      "requires": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Big picture",
+      "subtitle": "Where this is heading",
+      "requires": [
+        4
+      ]
+    }
+  ],
+  "videos": [
+    {
+      "id": "LPZh9BOjkQs",
+      "title": "Large Language Models explained briefly",
+      "channel": "3Blue1Brown",
+      "minutes": 8,
+      "published": "2024-11-20",
+      "step": 1,
+      "type": "foundation",
+      "depth": "core",
+      "why": "The best short mental model of what an LLM actually is. Start here.",
+      "notes": [],
+      "rating": null
+    },
+    {
+      "id": "cGuyrANVi4A",
+      "title": "How Model Context Protocol (MCP) actually works",
+      "channel": "Google Cloud Tech",
+      "minutes": 8,
+      "published": "2026-06-24",
+      "step": 1,
+      "type": "foundation",
+      "depth": "core",
+      "why": "MCP is how tools plug into AI; it comes up in almost every later video.",
+      "notes": [],
+      "rating": null
+    },
+    {
+      "id": "EWvNQjAaOHw",
+      "title": "How I use LLMs",
+      "channel": "Andrej Karpathy",
+      "minutes": 131,
+      "published": "2025-02-27",
+      "step": 1,
+      "type": "foundation",
+      "depth": "deep",
+      "why": "A tour of how a top AI researcher uses LLMs day to day. Long: watch in chunks.",
+      "notes": [],
+      "rating": null
+    },
+    {
+      "id": "saggDHHnmtQ",
+      "title": "Master 95% of Claude Code in 36 Mins (as a beginner)",
+      "channel": "Nate Herk | AI Automation",
+      "minutes": 37,
+      "published": "2026-01-21",
+      "step": 2,
+      "type": "claude-code",
+      "depth": "core",
+      "why": "Hands-on first steps with Claude Code, aimed at beginners.",
+      "notes": [
+        "Includes promotional segments.",
+        "Hands-on tutorial: the Claude Code interface may have changed since recording."
+      ],
+      "rating": null
+    },
+    {
+      "id": "vsGwx28z4jk",
+      "title": "Anthropic Just Revealed 12 New Rules for Prompting Opus 5.5",
+      "channel": "Jay E | RoboNuggets",
+      "minutes": 7,
+      "published": "2026-09-23",
+      "step": 2,
+      "type": "claude-code",
+      "depth": "core",
+      "why": "Short, recent prompting habits for Anthropic's latest model.",
+      "notes": [
+        "Includes promotional segments."
+      ],
+      "rating": null
+    },
+    {
+      "id": "I82j7AzMU80",
+      "title": "How does Claude Code *actually* work?",
+      "channel": "Theo - t3․gg",
+      "minutes": 39,
+      "published": "2026-04-13",
+      "step": 2,
+      "type": "general",
+      "depth": "core",
+      "why": "What happens inside any coding agent (Claude Code, Codex, Cursor).",
+      "notes": [],
+      "rating": null
+    },
+    {
+      "id": "D7_ipDqhtwk",
+      "title": "How We Build Effective Agents: Barry Zhang, Anthropic",
+      "channel": "AI Engineer",
+      "minutes": 15,
+      "published": "2025-04-04",
+      "step": 3,
+      "type": "foundation",
+      "depth": "core",
+      "why": "Anthropic's own definition of an agent and when to build one.",
+      "notes": [],
+      "rating": null
+    },
+    {
+      "id": "lNum1UFDYn0",
+      "title": "AI HARNESS: An In-Depth Explanation",
+      "channel": "Nick Saraev",
+      "minutes": 25,
+      "published": "2026-10-07",
+      "step": 3,
+      "type": "general",
+      "depth": "core",
+      "why": "The \"harness\": the tooling wrapped around a model that makes it useful.",
+      "notes": [
+        "Includes promotional segments."
+      ],
+      "rating": null
+    },
+    {
+      "id": "CEvIs9y1uog",
+      "title": "Don't Build Agents, Build Skills Instead – Barry Zhang & Mahesh Murag, Anthropic",
+      "channel": "AI Engineer",
+      "minutes": 16,
+      "published": "2025-12-08",
+      "step": 3,
+      "type": "general",
+      "depth": "core",
+      "why": "Why skills exist and why they beat building one-off agents.",
+      "notes": [],
+      "rating": null
+    },
+    {
+      "id": "rmvDxxNubIg",
+      "title": "No Vibes Allowed: Solving Hard Problems in Complex Codebases – Dex Horthy, HumanLayer",
+      "channel": "AI Engineer",
+      "minutes": 20,
+      "published": "2025-12-02",
+      "step": 4,
+      "type": "general",
+      "depth": "core",
+      "why": "Staying in control of context when working on real, complex codebases.",
+      "notes": [],
+      "rating": null
+    },
+    {
+      "id": "M6mYodf0dJM",
+      "title": "mattpocock/skills: A complete AI Coding workflow, end-to-end",
+      "channel": "Matt Pocock",
+      "minutes": 17,
+      "published": "2026-07-16",
+      "step": 4,
+      "type": "claude-code",
+      "depth": "core",
+      "why": "A complete workflow: spec, tickets, implementation and code review.",
+      "notes": [],
+      "rating": null
+    },
+    {
+      "id": "vDVSGVpB2vc",
+      "title": "How to Build Claude Agent Teams Better Than 99% of People",
+      "channel": "Nate Herk | AI Automation",
+      "minutes": 16,
+      "published": "2026-03-23",
+      "step": 4,
+      "type": "claude-code",
+      "depth": "core",
+      "why": "Splitting work across several Claude agents (subagents / teams).",
+      "notes": [
+        "Includes promotional segments."
+      ],
+      "rating": null
+    },
+    {
+      "id": "45K3zHckCnQ",
+      "title": "I spent $31,141 and 1000+ hrs on Claude Code to Learn This",
+      "channel": "Nick Saraev",
+      "minutes": 26,
+      "published": "2026-09-24",
+      "step": 4,
+      "type": "claude-code",
+      "depth": "core",
+      "why": "Practical lessons from heavy, long-term Claude Code use.",
+      "notes": [
+        "Includes promotional segments."
+      ],
+      "rating": null
+    },
+    {
+      "id": "-QFHIoCo-Ko",
+      "title": "Full Walkthrough: Workflow for AI Coding — Matt Pocock",
+      "channel": "AI Engineer",
+      "minutes": 96,
+      "published": "2026-04-24",
+      "step": 4,
+      "type": "general",
+      "depth": "deep",
+      "why": "The long hands-on workshop version of Matt Pocock's workflow.",
+      "notes": [],
+      "rating": null
+    },
+    {
+      "id": "8rABwKRsec4",
+      "title": "The New Code — Sean Grove, OpenAI",
+      "channel": "AI Engineer",
+      "minutes": 22,
+      "published": "2025-07-11",
+      "step": 5,
+      "type": "general",
+      "depth": "core",
+      "why": "Why specs, not code, may become the real source of truth.",
+      "notes": [],
+      "rating": null
+    },
+    {
+      "id": "RjfbvDXpFls",
+      "title": "Building pi in a World of Slop — Mario Zechner",
+      "channel": "AI Engineer",
+      "minutes": 18,
+      "published": "2026-04-16",
+      "step": 5,
+      "type": "general",
+      "depth": "core",
+      "why": "A critical look at AI-generated code and open source. Good balance after the hype.",
+      "notes": [],
+      "rating": null
+    }
+  ]
+}

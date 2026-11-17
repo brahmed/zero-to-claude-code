@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zero to Claude Code</title>
+  <meta name="description" content="Master the foundations, unlock new skills, level up from Novice to Architect.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <div class="intro">
+        <p class="eyebrow" id="eyebrow"></p>
+        <h1>Zero to Claude Code</h1>
+        <p class="subtitle">Master the foundations, unlock new skills, level up from Novice to Architect.</p>
+      </div>
+      <div class="level-card">
+        <div class="level-top">
+          <span id="badge" class="badge-hex" aria-hidden="true"></span>
+          <div>
+            <p class="level-num" id="level-num"></p>
+            <p class="level-name" id="level-name"></p>
+          </div>
+        </div>
+        <div class="progress-bar" role="progressbar" id="progress-bar" aria-label="Quests done" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="progress-fill"></span></div>
+        <p class="level-line" id="quests-line" aria-live="polite"></p>
+        <p class="level-line muted" id="next-line"></p>
+      </div>
+    </header>
+
+    <div class="tabs" role="tablist" aria-label="Views">
+      <button type="button" role="tab" id="tab-tree" aria-controls="panel-tree" aria-selected="true">Skill tree</button>
+      <button type="button" role="tab" id="tab-browse" aria-controls="panel-browse" aria-selected="false" tabindex="-1">Browse</button>
+    </div>
+
+    <main>
+      <div id="panel-tree" role="tabpanel" aria-labelledby="tab-tree">
+        <ul class="legend" aria-label="Legend">
+          <li><span class="sw sw-mastered"></span>Mastered</li>
+          <li><span class="sw sw-progress"></span>In progress</li>
+          <li><span class="sw sw-unlocked"></span>Unlocked</li>
+          <li><span class="sw sw-locked"></span>Locked <span class="muted">&middot; you can still peek inside</span></li>
+        </ul>
+        <div class="tree-panel"><div id="tree" class="tree"></div></div>
+        <section id="selected" class="selected" aria-live="off"></section>
+      </div>
+      <div id="panel-browse" role="tabpanel" aria-labelledby="tab-browse" hidden>
+        <div class="filters">
+          <div class="filter-group" id="f-time" role="group" aria-label="Time"><span class="filter-label">Time</span></div>
+          <div class="filter-group" id="f-type" role="group" aria-label="Type"><span class="filter-label">Type</span></div>
+          <div class="filter-group">
+            <label class="filter-label" for="f-channel">YouTuber</label>
+            <select id="f-channel"></select>
+          </div>
+          <label class="check"><input type="checkbox" id="f-hide"> Hide watched</label>
+          <button type="button" class="linkbtn" id="f-clear">Clear filters</button>
+        </div>
+        <p class="count" id="browse-count" aria-live="polite"></p>
+        <div id="browse-list"></div>
+        <p class="empty" id="browse-empty" hidden>No videos match these filters.</p>
+      </div>
+      <p class="error" id="error" hidden>Could not load videos.json.</p>
+    </main>
+
+    <footer>
+      <p>Unofficial, community-curated. Not affiliated with Anthropic. Videos belong to their creators.</p>
+      <p><a href="https://github.com/brahmed/zero-to-claude-code" target="_blank" rel="noopener noreferrer">Open source on GitHub</a></p>
+    </footer>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

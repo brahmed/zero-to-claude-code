@@ -3,5 +3,4 @@
 .env.*
 *.local
 .claude/
-CLAUDE.md
 node_modules/

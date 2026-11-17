@@ -5,7 +5,6 @@
   var CIRCLED = ['①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧', '⑨'];
   var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   var TYPES = { foundation: 'Foundation', general: 'General', 'claude-code': 'Claude Code' };
-  var LEVELS = ['Novice', 'Apprentice', 'Builder', 'Engineer', 'Expert', 'Architect'];
   var STATE_LABEL = { mastered: 'Mastered', progress: 'In progress', unlocked: 'Unlocked', locked: 'Locked' };
   var TIMES = [
     { id: 'le10', label: '≤10 min', test: function (m) { return m <= 10; } },
@@ -15,52 +14,11 @@
   ];
   var SVGNS = 'http://www.w3.org/2000/svg';
 
-  /* ---------- pure state logic (no DOM, no storage) ---------- */
-
-  // Returns [{id, state, done, total, bonus, minutes}] in step order.
-  // state: mastered | locked | progress | unlocked
-  function computeSkills(steps, videos, watched) {
-    var out = steps.map(function (st) {
-      var core = videos.filter(function (v) { return v.step === st.id && v.depth === 'core'; });
-      var bonus = videos.filter(function (v) { return v.step === st.id && v.depth !== 'core'; });
-      var done = core.filter(function (v) { return watched.has(v.id); }).length;
-      return {
-        id: st.id, done: done, total: core.length, bonus: bonus.length,
-        minutes: core.reduce(function (s, v) { return s + v.minutes; }, 0),
-        mastered: core.length > 0 && done === core.length
-      };
-    });
-    var byId = {};
-    out.forEach(function (s) { byId[s.id] = s; });
-    out.forEach(function (s, i) {
-      var reqs = steps[i].requires || [];
-      var locked = reqs.some(function (r) { return !byId[r] || !byId[r].mastered; });
-      s.state = s.mastered ? 'mastered' : locked ? 'locked' : s.done > 0 ? 'progress' : 'unlocked';
-    });
-    return out;
-  }
-  function levelOf(skills) {
-    return skills.filter(function (s) { return s.state === 'mastered'; }).length;
-  }
-  function depthMap(steps) {
-    var byId = {}, memo = {};
-    steps.forEach(function (s) { byId[s.id] = s; });
-    function d(id) {
-      if (memo[id]) return memo[id];
-      memo[id] = 1; // guards against cycles
-      var reqs = (byId[id] && byId[id].requires) || [];
-      var m = 0;
-      reqs.forEach(function (r) { m = Math.max(m, d(r)); });
-      return (memo[id] = 1 + m);
-    }
-    steps.forEach(function (s) { d(s.id); });
-    return memo;
-  }
-
-  if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { computeSkills: computeSkills, levelOf: levelOf, depthMap: depthMap };
-  }
-  if (typeof document === 'undefined') return;
+  var Skills = window.Skills;
+  var LEVELS = Skills.LEVELS;
+  var computeSkills = Skills.computeSkills;
+  var levelOf = Skills.levelOf;
+  var depthMap = Skills.depthMap;
 
   /* ---------- app ---------- */
 
@@ -518,7 +476,7 @@
     cancelAnimationFrame(resizeRaf);
     resizeRaf = requestAnimationFrame(renderTree);
   });
-  fetch('videos.json')
+  fetch('data/videos.json')
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (d) {
       data = d;

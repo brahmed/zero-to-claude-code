@@ -235,6 +235,21 @@
       "rating": null
     },
     {
+      "id": "8Pg6G5h05hk",
+      "title": "Anthropic Just Released the New Rules of Claude Code",
+      "channel": "Nate Herk | AI Automation",
+      "minutes": 10,
+      "published": "2026-11-17",
+      "step": 4,
+      "type": "claude-code",
+      "depth": "deep",
+      "why": "How the Claude Code team now hands off approving, checking and steering, with a copyable setup of deny rules, auto mode and hooks.",
+      "notes": [
+        "Includes promotional segments."
+      ],
+      "rating": null
+    },
+    {
       "id": "8rABwKRsec4",
       "title": "The New Code — Sean Grove, OpenAI",
       "channel": "AI Engineer",
